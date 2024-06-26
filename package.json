@@ -67,6 +67,9 @@
     "magento",
     "opensearch"
   ],
+  "engines": {
+    "node": ">= 20.0.0"
+  },
   "license": "MIT-0",
   "version": "0.0.0",
   "jest": {
