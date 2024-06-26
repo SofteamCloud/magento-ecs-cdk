@@ -550,8 +550,9 @@ export class MagentoStack extends Stack {
         securityGroup: efsFileSystemSecurityGroup,
         performanceMode: PerformanceMode.GENERAL_PURPOSE,
         lifecyclePolicy: LifecyclePolicy.AFTER_30_DAYS,
-        throughputMode: ThroughputMode.PROVISIONED,
-        provisionedThroughputPerSecond: Size.mebibytes(1024),
+        throughputMode: ThroughputMode.BURSTING,
+        // throughputMode: ThroughputMode.PROVISIONED,
+        // provisionedThroughputPerSecond: Size.mebibytes(1024),
         encrypted: true,
         removalPolicy: RemovalPolicy.DESTROY, //props.removalPolicy,
       });
