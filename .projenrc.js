@@ -17,6 +17,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   name: 'magento-ecs-cdk',
   repositoryUrl: 'https://github.com/aws-samples/magento-ecs-cdk.git',
   appEntrypoint: 'integ.ts',
+  minNodeVersion: '20.0.0',
 
   depsUpgradeOptions: {
     ignoreProjen: true,
