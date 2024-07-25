@@ -264,6 +264,10 @@ export class MagentoService extends Construct {
       taskDefinition = new FargateTaskDefinition(this, 'TaskDef' + id, {
         cpu: taskCpu,
         memoryLimitMiB: taskMem,
+        runtimePlatform: {
+          operatingSystemFamily: ecs.OperatingSystemFamily.LINUX,
+          cpuArchitecture: ecs.CpuArchitecture.ARM64,
+        },
       });
     }
     if (props.useFSX) {
@@ -287,7 +291,7 @@ export class MagentoService extends Construct {
     }
     const magentoUser = this.node.tryGetContext('magento_user') ? this.node.tryGetContext('magento_user') : 'magento';
 
-    const magentoEnvs: {[key: string]: string} = {
+    const magentoEnvs: { [key: string]: string } = {
       BITNAMI_DEBUG: 'true',
       MAGENTO_USERNAME: magentoUser,
 
